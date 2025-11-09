@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Continental Hotel Reservation Form</title>
+  <style>
+    body {
+      background:#e7e7e7;
+      font-family: "Times New Roman", Times, serif;
+      margin:40px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .frame {
+      background: #ddd;
+      padding: 30px;
+      box-shadow: 0 0 0 3px #bdbdbd inset;
+    }
+
+    .card {
+      width: 720px;
+      background: #d9eefc;
+      border: 3px solid #6e6e6e;
+      padding: 8px;
+    }
+
+    .title {
+      text-align:center;
+      color: #d11b1b;
+      font-weight:700;
+      font-size:28px;
+      margin: 6px 0 14px 0;
+    }
+
+    table {
+      width:100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td.label {
+      width: 28%;
+      padding:10px;
+      vertical-align: middle;
+      font-weight:700;
+      text-align:right;
+      border:1px solid #8b8b8b;
+      background: rgba(0,0,0,0.03);
+      white-space:nowrap;
+    }
+
+    td.control {
+      padding:10px;
+      border:1px solid #8b8b8b;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="time"], input[type="date"], select {
+      padding:6px 8px;
+      border:1px solid #999;
+      width:60%;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    /* make the two departure boxes smaller and inline */
+    .small {
+      width:30%;
+      display:inline-block;
+      margin-right:8px;
+    }
+
+    .radio-group, .checkbox-group {
+      line-height:1.9;
+    }
+
+    .checkbox-group label, .radio-group label {
+      display:inline-block;
+      margin-right:14px;
+      font-weight:normal;
+    }
+
+    .submit-row td {
+      text-align:center;
+      padding:12px;
+      border:1px solid #8b8b8b;
+    }
+
+    button {
+      padding:6px 18px;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    /* make layout a bit like sample with inner thin border */
+    .card-inner {
+      border:2px solid #bfbfbf;
+      padding:6px;
+      background: #d9eefc;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="card card-inner">
+      <div class="title">Continental Hotel Reservation Form</div>
+
+      <form action="#" method="post">
+        <table>
+          <tr>
+            <td class="label">Name</td>
+            <td class="control">
+              <input type="text" name="name" placeholder="Enter your name" required>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">eMail</td>
+            <td class="control">
+              <input type="email" name="email" value="info@continental.pk" required style="width:45%;">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Mobile No</td>
+            <td class="control">
+              <input type="tel" name="mobile" placeholder="Enter your cell number" pattern="[0-9+\-\s]+" style="width:45%;">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Arrival Time</td>
+            <td class="control">
+              <input type="time" name="arrival_time" placeholder="Enter your arrival time" class="small" style="width:30%;">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Departure</td>
+            <td class="control">
+              <!-- two small boxes like sample -->
+              <input type="date" name="dep_date" class="small">
+              <input type="time" name="dep_time" class="small">
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Room Type</td>
+            <td class="control radio-group">
+              <label><input type="radio" name="room" value="single" checked> Single</label>
+              <label><input type="radio" name="room" value="double"> Double</label>
+              <label><input type="radio" name="room" value="presidential"> Presidential Suite</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Preferences</td>
+            <td class="control checkbox-group">
+              <label><input type="checkbox" name="pref_nonsmoke"> Non-Smoking</label><br>
+              <label><input type="checkbox" name="pref_internet"> Internet</label><br>
+              <label><input type="checkbox" name="pref_firm"> Firm Mattress</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">Mode of Payment</td>
+            <td class="control">
+              <label><input type="checkbox" name="pay_cash"> Cash</label>
+              <label><input type="checkbox" name="pay_check"> Check</label><br>
+              <label><input type="checkbox" id="ccbox" name="pay_card"> Credit Card</label>
+              <select name="card_type" style="margin-left:8px;">
+                <option value="">Select Card</option>
+                <option>Visa</option>
+                <option>MasterCard</option>
+                <option>American Express</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr class="submit-row">
+            <td colspan="2">
+              <button type="submit">Send Data</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
